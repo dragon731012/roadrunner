@@ -18,7 +18,9 @@
       var height=screenheight;
       width=width/3;
       var left=screenwidth/3;
-      var xspeed=4;
+      var xspeed=4; 
+      var upspped=3;
+      var downspeed=6;
 	    
       bg.style.left=left+"px";
       bg.style.height=height+"px";
@@ -50,6 +52,12 @@
 	      if(event.key=="ArrowRight"){ 
 		      xmove=xspeed*1; 
 	      } 
+	      if(event.key=="ArrowUp"){ 
+		      ymove=upspeed*-1; 
+	      } 
+	      if(event.key=="ArrowDown"){ 
+		      ymove=downspeed*1; 
+	      } 
       }); 
       window.addEventListener("keyup",function(event){ 
 	      if(event.key=="ArrowLeft"){ 
@@ -57,6 +65,12 @@
 	      } 
 	      if(event.key=="ArrowRight"){ 
 		      xmove=0; 
+	      } 
+	      if(event.key=="ArrowUp"){ 
+		      ymove=0;
+	      } 
+	      if(event.key=="ArrowDown"){ 
+		      ymove=0;
 	      } 
       }); 
       setInterval(update,15);
