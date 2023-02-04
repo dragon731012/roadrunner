@@ -1,4 +1,3 @@
-<script>
 alert("--DODGYSQUARE--rules: use the left and right arrow keys, to dodge the red squares. the red squares get really fast, so be careful!");
 var xpos = 80;
 var ypos = 350;
@@ -193,4 +192,3 @@ function colliding() {
 	}
 }
 setInterval(colliding, 5);
-</script>
