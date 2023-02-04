@@ -28,10 +28,10 @@ var right = 0;
 	bg.id = 'bg';
 	bg.style.display = 'block';
 	bg.innerText = '';
+	function bg(){bg.style.backgroundImage="url(slowroad.gif)";}
+	bg();
 }());
 (function() {
-	function bg(){elem.style.backgroundImage="url(download.jpg)";}
-	bg();
 	var me = document.createElement('div');
 	var body = document.getElementsByTagName('body')[0];
 	body.appendChild(me);
@@ -51,6 +51,8 @@ var right = 0;
 	me.id = 'me';
 	me.style.display = 'block';
 	me.innerText = 'by dragonmaster73101';
+	function bg(){me.style.backgroundImage="url(download.jpg)";}
+	bg();
 	document.getElementById('me').addEventListener('click', function() {
 		window.open('https://github.com/dragon731012');
 	});
