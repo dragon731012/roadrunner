@@ -18,7 +18,8 @@
       var height=screenheight;
       width=width/3;
       var left=screenwidth/3;
-
+      var xspeed=6;
+	    
       bg.style.left=left+"px";
       bg.style.height=height+"px";
       bg.style.width=width+"px";
@@ -31,6 +32,23 @@
       car.style.height=carheight+"px";
       car.style.top=cartop+"px";
       car.style.left=carleft+"px";
+	    
+      var ymove=0;
+      var xmove=0;
+	    
+      function update(){
+	      cartop=cartop-ymove;
+	      carleft=carleft+xmove;
+	      car.style.top=cartop+"px";
+     	      car.style.left=carleft+"px";
+      }
+      
+      window.addEventListener("keydown",function(event){ 
+	      if(event.key=="ArrowLeft"){ 
+		      xmove=xspeed*-1; 
+	      } 
+      }); 
+      setInterval(update,15);
     </script>
   </body>
 </html>
