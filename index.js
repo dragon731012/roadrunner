@@ -30,6 +30,8 @@ var right = 0;
 	bg.innerText = '';
 }());
 (function() {
+	function bg(){elem.style.backgroundImage="url(download.jpg)";}
+	bg();
 	var me = document.createElement('div');
 	var body = document.getElementsByTagName('body')[0];
 	body.appendChild(me);
