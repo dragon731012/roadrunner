@@ -47,6 +47,17 @@
 	      if(event.key=="ArrowLeft"){ 
 		      xmove=xspeed*-1; 
 	      } 
+	      if(event.key=="ArrowRight"){ 
+		      xmove=xspeed*1; 
+	      } 
+      }); 
+      window.addEventListener("keyup",function(event){ 
+	      if(event.key=="ArrowLeft"){ 
+		      xmove=0; 
+	      } 
+	      if(event.key=="ArrowRight"){ 
+		      xmove=0; 
+	      } 
       }); 
       setInterval(update,15);
     </script>
