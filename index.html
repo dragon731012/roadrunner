@@ -60,6 +60,15 @@
 		      return enemycar4.png;
 	      }
       }
+
+      function randomenemypos(){
+              var pos=Math.floor(Math.random()*(4-1+1)+1);
+              if (pos==1){
+                      var a=carwidth+left
+                      return a;
+              }
+      }
+
       window.addEventListener("keydown",function(event){ 
 	      if(event.key=="ArrowLeft"){ 
 		      xmove=xspeed*-1; 
