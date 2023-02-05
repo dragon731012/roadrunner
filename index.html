@@ -127,7 +127,7 @@
 			enemy.style.top = enemyypos + "px";
 			enemy.style.left = enemypos + "px";
 			enemy.src = enemycar;
-			var enemymoveable=true;
+			enemymoveable=true;
 
 			function move() {
 				if (enemymoveable==true){
@@ -139,7 +139,7 @@
 						clearInterval(move);
 						enemyspeed=enemyspeed+0.2;
 						makeenemy();
-						var enemymoveable=false;
+						enemymoveable=false;
 					}
 				}
 			}
