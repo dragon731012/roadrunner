@@ -130,7 +130,9 @@
 				}
 				if (enemyypos >= height) {
 					enemyypos = 0 - carheight;
-					enemyspeed = enemyspeed + 0.005;
+					if (enemyspeed<8){
+						enemyspeed = enemyspeed + 0.005;
+					}
 					makeenemy();
 				}
 			}
