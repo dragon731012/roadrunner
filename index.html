@@ -17,135 +17,135 @@
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
     <script>
-	        var enemymoveable=true;
-		var screenwidth = window.innerWidth;
-		var screenheight = window.innerHeight;
-		var width = screenwidth;
-		var height = screenheight;
-		width = width / 3;
-		var left = screenwidth / 3;
-		var xspeed = 4;
-		var upspeed = 3;
-		var downspeed = 6;
-		var enemyspeed=3;
+	var enemymoveable = true;
+	var screenwidth = window.innerWidth;
+	var screenheight = window.innerHeight;
+	var width = screenwidth;
+	var height = screenheight;
+	width = width / 3;
+	var left = screenwidth / 3;
+	var xspeed = 4;
+	var upspeed = 3;
+	var downspeed = 6;
+	var enemyspeed = 3;
 
-		bg.style.left = left + "px";
-		bg.style.height = height + "px";
-		bg.style.width = width + "px";
+	bg.style.left = left + "px";
+	bg.style.height = height + "px";
+	bg.style.width = width + "px";
 
-		var carwidth = width / 4 - 50;
-		car.style.width = carwidth + "px";
-		var carheight = height / 5;
-		var cartop = height - carheight - height / 17;
-		var carleft = left + width / 2 - carwidth / 2;
-		car.style.height = carheight + "px";
-		car.style.top = cartop + "px";
-		car.style.left = carleft + "px";
-		enemy.style.height = carheight + "px";
-		enemy.style.width = carwidth + "px";
+	var carwidth = width / 4 - 50;
+	car.style.width = carwidth + "px";
+	var carheight = height / 5;
+	var cartop = height - carheight - height / 17;
+	var carleft = left + width / 2 - carwidth / 2;
+	car.style.height = carheight + "px";
+	car.style.top = cartop + "px";
+	car.style.left = carleft + "px";
+	enemy.style.height = carheight + "px";
+	enemy.style.width = carwidth + "px";
 
-		var ymove = 0;
-		var xmove = 0;
+	var ymove = 0;
+	var xmove = 0;
 
 
-		function randomenemygen() {
-			var enemynum = Math.floor(Math.random() * (4 - 1 + 1) + 1);
-			if (enemynum == 1) {
-				return "enemycar1.png";
-			}
-			if (enemynum == 2) {
-				return "enemycar2.png";
-			}
-			if (enemynum == 3) {
-				return "259DA7B3-FF41-4B47-B7A0-F65913634E56.png";
-			}
-			if (enemynum == 4) {
-				return "enemycar4.png";
-			}
+	function randomenemygen() {
+		var enemynum = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+		if (enemynum == 1) {
+			return "enemycar1.png";
 		}
-
-		function randomenemypos() {
-			var pos = Math.floor(Math.random() * (4 - 1 + 1) + 1);
-			if (pos == 1) {
-				var a = carwidth + left + carwidth / 16;
-				return a;
-			}
-			if (pos == 2) {
-				var a = carwidth + left + carwidth + carwidth / 16;
-				return a;
-			}
-			if (pos == 3) {
-				var a = carwidth + left + carwidth * 2 + carwidth / 16;
-				return a;
-			}
-			if (pos == 4) {
-				var a = carwidth + left + carwidth * 3 + carwidth / 16;
-				return a;
-			}
+		if (enemynum == 2) {
+			return "enemycar2.png";
 		}
+		if (enemynum == 3) {
+			return "259DA7B3-FF41-4B47-B7A0-F65913634E56.png";
+		}
+		if (enemynum == 4) {
+			return "enemycar4.png";
+		}
+	}
 
-		window.addEventListener("keydown", function(event) {
-			if (event.key == "ArrowLeft") {
-				xmove = xspeed * -1;
-			}
-			if (event.key == "ArrowRight") {
-				xmove = xspeed * 1;
-			}
-			if (event.key == "ArrowUp") {
-				ymove = upspeed;
-			}
-			if (event.key == "ArrowDown") {
-				ymove = downspeed * -1;
-			}
-		});
-		window.addEventListener("keyup", function(event) {
-			if (event.key == "ArrowLeft") {
-				xmove = 0;
-			}
-			if (event.key == "ArrowRight") {
-				xmove = 0;
-			}
-			if (event.key == "ArrowUp") {
-				ymove = 0;
-			}
-			if (event.key == "ArrowDown") {
-				ymove = 0;
-			}
-		});
+	function randomenemypos() {
+		var pos = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+		if (pos == 1) {
+			var a = carwidth + left + carwidth / 16;
+			return a;
+		}
+		if (pos == 2) {
+			var a = carwidth + left + carwidth + carwidth / 16;
+			return a;
+		}
+		if (pos == 3) {
+			var a = carwidth + left + carwidth * 2 + carwidth / 16;
+			return a;
+		}
+		if (pos == 4) {
+			var a = carwidth + left + carwidth * 3 + carwidth / 16;
+			return a;
+		}
+	}
 
-		function makeenemy() {
-			var enemycar = randomenemygen();
-			var enemypos = randomenemypos();
-			var enemyypos = 0 - carheight;
-			enemy.style.top = enemyypos + "px";
-			enemy.style.left = enemypos + "px";
-			enemy.src = enemycar;
-			enemymoveable=true;
+	window.addEventListener("keydown", function(event) {
+		if (event.key == "ArrowLeft") {
+			xmove = xspeed * -1;
+		}
+		if (event.key == "ArrowRight") {
+			xmove = xspeed * 1;
+		}
+		if (event.key == "ArrowUp") {
+			ymove = upspeed;
+		}
+		if (event.key == "ArrowDown") {
+			ymove = downspeed * -1;
+		}
+	});
+	window.addEventListener("keyup", function(event) {
+		if (event.key == "ArrowLeft") {
+			xmove = 0;
+		}
+		if (event.key == "ArrowRight") {
+			xmove = 0;
+		}
+		if (event.key == "ArrowUp") {
+			ymove = 0;
+		}
+		if (event.key == "ArrowDown") {
+			ymove = 0;
+		}
+	});
 
-			function move() {
-				if (enemymoveable==true){
-					if (enemyypos <= height) {
-						enemyypos = enemyypos + enemyspeed;
-						enemy.style.top = enemyypos + "px";
-					} 
+	function makeenemy() {
+		var enemycar = randomenemygen();
+		var enemypos = randomenemypos();
+		var enemyypos = 0 - carheight;
+		enemy.style.top = enemyypos + "px";
+		enemy.style.left = enemypos + "px";
+		enemy.src = enemycar;
+		enemymoveable = true;
+
+		function move() {
+			if (enemymoveable == true) {
+				if (enemyypos <= height) {
+					enemyypos = enemyypos + enemyspeed;
+					enemy.style.top = enemyypos + "px";
 				}
 			}
-			setInterval(move, 15);
 		}
-		makeenemy();
-	        function update() {
-			cartop = cartop - ymove;
-			carleft = carleft + xmove;
-			car.style.top = cartop + "px";
-			car.style.left = carleft + "px";
-			if (enemyypos>=height){
-				clearInterval(move);
-				enemyspeed=enemyspeed+0.2;
-				makeenemy();
-				enemymoveable=false;
-			}
+		setInterval(move, 15);
+	}
+	makeenemy();
+
+	function update() {
+		cartop = cartop - ymove;
+		carleft = carleft + xmove;
+		car.style.top = cartop + "px";
+		car.style.left = carleft + "px";
+		if (enemyypos >= height) {
+			enemyspeed = enemyspeed + 0.2;
+			makeenemy();
+			enemymoveable = false;
 		}
-		setInterval(update, 15);
+	}
+	setInterval(update, 15);
     </script>
   </body>
 </html>
