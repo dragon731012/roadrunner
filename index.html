@@ -64,7 +64,19 @@
       function randomenemypos(){
               var pos=Math.floor(Math.random()*(4-1+1)+1);
               if (pos==1){
-                      var a=carwidth+left
+                      var a=carwidth+left+carwidth/16;
+                      return a;
+              }
+              if (pos==2){
+                      var a=carwidth+left+carwidth+carwidth/16;
+                      return a;
+              }
+              if (pos==3){
+                      var a=carwidth+left+carwidth*2+carwidth/16;
+                      return a;
+              }
+              if (pos==4){
+                      var a=carwidth+left+carwidth*3+carwidth/16;
                       return a;
               }
       }
