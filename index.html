@@ -129,11 +129,11 @@
 			enemy.src = enemycar;
 
 			function move() {
-				if (enemymoveable=true){
-					if (enemyypos <= height) {
-						enemyypos = enemyypos + enemyspeed;
-						enemy.style.top = enemyypos + "px";
-					} else {
+				if (enemyypos <= height) {
+					enemyypos = enemyypos + enemyspeed;
+					enemy.style.top = enemyypos + "px";
+				} else {
+					if (enemymoveable==true){
 						enemymoveable=false;
 						clearInterval(move);
 						enemyspeed=enemyspeed+0.2;
