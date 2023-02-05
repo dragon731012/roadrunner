@@ -11,6 +11,11 @@
 	 src="252623BD-836E-4323-AE4D-C91D4A1A484D.png"	
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
+    <body style="background-color:#50C878;">
+    <img id="enemy"
+	 src=""	
+         style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
+    >
     <script>
       var screenwidth=window.innerWidth;
       var screenheight=window.innerHeight;
@@ -34,17 +39,13 @@
       car.style.height=carheight+"px";
       car.style.top=cartop+"px";
       car.style.left=carleft+"px";
+      enemy.style.height=carheight+"px";
+      enemy.style.width=carwidth+"px";
 	    
       var ymove=0;
       var xmove=0;
 	    
-      function update(){
-	      cartop=cartop-ymove;
-	      carleft=carleft+xmove;
-	      car.style.top=cartop+"px";
-     	      car.style.left=carleft+"px";
-      }
-      
+	    
       function randomenemygen(){
               var enemynum=Math.floor(Math.random()*(4-1+1)+1);
 	      if (enemynum==1){
@@ -109,6 +110,32 @@
 		      ymove=0;
 	      } 
       }); 
+      function update(){
+	      cartop=cartop-ymove;
+	      carleft=carleft+xmove;
+	      car.style.top=cartop+"px";
+     	      car.style.left=carleft+"px";
+      }
+      
+      function makeenemy(){
+              var enemycar=randomenenmygen();
+	      var enemypos=randomenenmypos();
+	      var enemyypos=0-carheight;
+	      enemy.style.top=enemyypos+"px";
+      	      enemy.style.left=enemypos+"px";
+	      enemy.style.backgroundImage="url("+enemycar+")";
+	      function move(){
+		      if (enemyypos<=height){
+		              enemyypos=enemyypos+enemyspeed;
+			      enemy.style.top=enemyypos+"px";
+		      }
+		      else{
+			      clearInterval(move);
+		      }
+	      }
+	      setInterval(move,15);
+      }
+      makeenemy();
       setInterval(update,15);
     </script>
   </body>
