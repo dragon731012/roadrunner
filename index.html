@@ -143,11 +143,6 @@
 		carleft = carleft + xmove;
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
-		if (enemyypos >= height) {
-			enemyspeed = enemyspeed + 0.2;
-			makeenemy();
-			enemymoveable = false;
-		}
 	}
 	setInterval(update, 15);
     </script>
