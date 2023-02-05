@@ -113,13 +113,6 @@
 			}
 		});
 
-		function update() {
-			cartop = cartop - ymove;
-			carleft = carleft + xmove;
-			car.style.top = cartop + "px";
-			car.style.left = carleft + "px";
-		}
-
 		function makeenemy() {
 			var enemycar = randomenemygen();
 			var enemypos = randomenemypos();
@@ -135,17 +128,23 @@
 						enemyypos = enemyypos + enemyspeed;
 						enemy.style.top = enemyypos + "px";
 					} 
-					else if (enemyypos>=height){
-						clearInterval(move);
-						enemyspeed=enemyspeed+0.2;
-						makeenemy();
-						enemymoveable=false;
-					}
 				}
 			}
 			setInterval(move, 15);
 		}
 		makeenemy();
+	        function update() {
+			cartop = cartop - ymove;
+			carleft = carleft + xmove;
+			car.style.top = cartop + "px";
+			car.style.left = carleft + "px";
+			if (enemyypos>=height){
+				clearInterval(move);
+				enemyspeed=enemyspeed+0.2;
+				makeenemy();
+				enemymoveable=false;
+			}
+		}
 		setInterval(update, 15);
     </script>
   </body>
