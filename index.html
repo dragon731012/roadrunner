@@ -133,13 +133,8 @@
 					enemy.style.top = enemyypos + "px";
 				} else {
 					clearInterval(move);
-					var waittime=Math.floor(Math.random() * (2 - 1 + 1) + 1);
-					function waiting(){
-						enemyspeed=enemyspeed+0.2;
-						makeenemy();
-					}
-					setTimeout(waiting,waittime);
-
+					enemyspeed=enemyspeed+0.2;
+					makeenemy();
 				}
 			}
 			setInterval(move, 15);
