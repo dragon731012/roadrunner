@@ -127,16 +127,20 @@
 			enemy.style.top = enemyypos + "px";
 			enemy.style.left = enemypos + "px";
 			enemy.src = enemycar;
+			var enemymoveable=true;
 
 			function move() {
-				if (enemyypos <= height) {
-					enemyypos = enemyypos + enemyspeed;
-					enemy.style.top = enemyypos + "px";
-				} 
-				else if (enemyypos>=height){
-					clearInterval(move);
-					enemyspeed=enemyspeed+0.2;
-					makeenemy();
+				if (enemymoveable==true){
+					if (enemyypos <= height) {
+						enemyypos = enemyypos + enemyspeed;
+						enemy.style.top = enemyypos + "px";
+					} 
+					else if (enemyypos>=height){
+						clearInterval(move);
+						enemyspeed=enemyspeed+0.2;
+						makeenemy();
+						var enemymoveable=false;
+					}
 				}
 			}
 			setInterval(move, 15);
