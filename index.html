@@ -134,10 +134,12 @@
 					enemy.style.top = enemyypos + "px";
 				} else {
 					var waittime=Math.floor(Math.random() * (2 - 1 + 1) + 1);
-					wait(waittime);
-					enemyspeed=enemyspeed+0.2;
-					makeenemy();
-					clearInterval(move);
+					function waiting(){
+						enemyspeed=enemyspeed+0.2;
+						makeenemy();
+						clearInterval(move);
+					}
+					setTimeout(waiting,waittime);
 				}
 			}
 			setInterval(move, 15);
