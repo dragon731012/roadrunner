@@ -47,43 +47,6 @@
 	var ymove = 0;
 	var xmove = 0;
 
-
-	function randomenemygen() {
-		var enemynum = Math.floor(Math.random() * (4 - 1 + 1) + 1);
-		if (enemynum == 1) {
-			return "enemycar1.png";
-		}
-		if (enemynum == 2) {
-			return "enemycar2.png";
-		}
-		if (enemynum == 3) {
-			return "259DA7B3-FF41-4B47-B7A0-F65913634E56.png";
-		}
-		if (enemynum == 4) {
-			return "enemycar4.png";
-		}
-	}
-
-	function randomenemypos() {
-		var pos = Math.floor(Math.random() * (4 - 1 + 1) + 1);
-		if (pos == 1) {
-			var a = carwidth + left + carwidth / 16;
-			return a;
-		}
-		if (pos == 2) {
-			var a = carwidth + left + carwidth + carwidth / 16;
-			return a;
-		}
-		if (pos == 3) {
-			var a = carwidth + left + carwidth * 2 + carwidth / 16;
-			return a;
-		}
-		if (pos == 4) {
-			var a = carwidth + left + carwidth * 3 + carwidth / 16;
-			return a;
-		}
-	}
-
 	window.addEventListener("keydown", function(event) {
 		if (event.key == "ArrowLeft") {
 			xmove = xspeed * -1;
@@ -114,9 +77,35 @@
 	});
 
 	function makeenemy() {
-		var enemycar = randomenemygen();
+		var enemycar="";
+		var enemynum = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+		if (enemynum == 1) {
+			enemycar="enemycar1.png";
+		}
+		if (enemynum == 2) {
+			enemycar="enemycar2.png";
+		}
+		if (enemynum == 3) {
+			enemycar="259DA7B3-FF41-4B47-B7A0-F65913634E56.png";
+		}
+		if (enemynum == 4) {
+			enemycar="enemycar4.png";
+		}
 		enemy.src = enemycar;
-		var enemypos = randomenemypos();
+		var pos = Math.floor(Math.random() * (4 - 1 + 1) + 1);
+		if (pos == 1) {
+			var a = carwidth + left + carwidth / 16;
+		}
+		if (pos == 2) {
+			var a = carwidth + left + carwidth + carwidth / 16;
+		}
+		if (pos == 3) {
+			var a = carwidth + left + carwidth * 2 + carwidth / 16;
+		}
+		if (pos == 4) {
+			var a = carwidth + left + carwidth * 3 + carwidth / 16;
+		}
+		var enemypos = a;
 		var enemyypos = 0 - carheight;
 		enemy.style.top = enemyypos + "px";
 		enemy.style.left = enemypos + "px";
