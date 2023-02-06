@@ -27,7 +27,7 @@
 	var xspeed = 4;
 	var upspeed = 3;
 	var downspeed = 6;
-	var enemyspeed = 3;
+	var enemyspeed = 6;
 
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
@@ -131,7 +131,7 @@
 				}
 			}
 		}
-		setInterval(move, 15);
+		setInterval(move, 30);
 	}
 	makeenemy();
 
@@ -141,7 +141,7 @@
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
 	}
-	setInterval(update, 15);
+	setInterval(update, 100);
     </script>
   </body>
 </html>
