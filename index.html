@@ -115,11 +115,11 @@
 
 	function makeenemy() {
 		var enemycar = randomenemygen();
+		enemy.src = enemycar;
 		var enemypos = randomenemypos();
 		var enemyypos = 0 - carheight;
 		enemy.style.top = enemyypos + "px";
 		enemy.style.left = enemypos + "px";
-		enemy.src = enemycar;
 		enemymoveable = true;
 
 		function move() {
