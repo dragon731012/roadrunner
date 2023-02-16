@@ -112,6 +112,24 @@
 		}
 		enemypos = a;
 		enemymoveable = true;
+		function move() {
+			if (enemymoveable==true){
+				if (enemyypos <= height) {
+					enemyypos = enemyypos + enemyspeed;
+					enemy.style.top = enemyypos + "px";
+				}
+				if (enemyypos > height) {
+					makeenemy();
+					clearInterval(move);
+					enemyypos = 0 - carheight;
+					enemy.style.top = enemyypos + "px";
+					if (enemyspeed <= 30) {
+						enemyspeed = enemyspeed + 0.5;
+					}
+				}
+			}
+		}
+		setInterval(move, 15);
 	}
 	makeenemy();
 
@@ -124,23 +142,6 @@
 		enemy.style.top = enemyypos + "px";
 	}
 	setInterval(update, 15);
-		function move() {
-		if (enemymoveable==true){
-			if (enemyypos <= height) {
-				enemyypos = enemyypos + enemyspeed;
-				enemy.style.top = enemyypos + "px";
-			}
-			if (enemyypos > height) {
-				makeenemy();
-				enemyypos = 0 - carheight;
-				enemy.style.top = enemyypos + "px";
-				if (enemyspeed <= 30) {
-					enemyspeed = enemyspeed + 0.5;
-				}
-			}
-		}
-	}
-	setInterval(move, 15);
     </script>
   </body>
 </html>
