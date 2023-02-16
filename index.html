@@ -131,10 +131,10 @@
 				enemy.style.top = enemyypos + "px";
 			}
 			if (enemyypos > height) {
+				makeenemy();
 				clearInterval(move);
 				enemyypos = -300 - carheight;
 				enemy.style.top = enemyypos + "px";
-				makeenemy();
 				if (enemyspeed <= 30) {
 					enemyspeed = enemyspeed + 0.5;
 				}
