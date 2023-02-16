@@ -111,10 +111,7 @@
 			a = carwidth + left + carwidth * 3 + carwidth / 16;
 		}
 		enemypos = a;
-		function waiting(){
-			enemymoveable = true;
-		}
-		setTimeout(waiting,500);
+		enemymoveable = true;
 	}
 	makeenemy();
 
@@ -127,8 +124,7 @@
 		enemy.style.top = enemyypos + "px";
 	}
 	setInterval(update, 15);
-
-	function move() {
+		function move() {
 		if (enemymoveable==true){
 			if (enemyypos <= height) {
 				enemyypos = enemyypos + enemyspeed;
@@ -145,7 +141,7 @@
 			}
 		}
 	}
-	setInterval(move, 0);
+	setInterval(move, 15);
     </script>
   </body>
 </html>
