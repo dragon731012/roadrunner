@@ -28,6 +28,7 @@
 	var upspeed = 3;
 	var downspeed = 6;
 	var enemyspeed = 3;
+	enemyypos = 0 - carheight;
 
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
@@ -106,12 +107,22 @@
 			var a = carwidth + left + carwidth * 3 + carwidth / 16;
 		}
 		var enemypos = a;
-		var enemyypos = 0 - carheight;
+		enemyypos = 0 - carheight;
 		enemy.style.top = enemyypos + "px";
 		enemy.style.left = enemypos + "px";
 		enemymoveable = true;
+	}
+	makeenemy();
 
-		function move() {
+	function update() {
+		cartop = cartop - ymove;
+		carleft = carleft + xmove;
+		car.style.top = cartop + "px";
+		car.style.left = carleft + "px";
+	}
+	setInterval(update, 15);
+	    
+	function move() {
 			if (enemymoveable == true) {
 				if (enemyypos <= height) {
 					enemyypos = enemyypos + enemyspeed;
@@ -132,16 +143,6 @@
 			}
 		}
 		setInterval(move, 15);
-	}
-	makeenemy();
-
-	function update() {
-		cartop = cartop - ymove;
-		carleft = carleft + xmove;
-		car.style.top = cartop + "px";
-		car.style.left = carleft + "px";
-	}
-	setInterval(update, 15);
     </script>
   </body>
 </html>
