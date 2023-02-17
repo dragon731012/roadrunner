@@ -42,6 +42,9 @@
 	    
 	gas.style.width=gassize+"px";
 
+	var gasleft=0;
+	var gastop=0;
+	    
 	var carwidth = width / 4 - 50;
 	car.style.width = carwidth + "px";
 	var carheight = height / 5;
@@ -127,6 +130,8 @@
 		carleft = carleft + xmove;
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
+		bg.style.left = left + "px";
+		bg.style.height = height + "px";
     	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
 		car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
 		window.location.reload(1);
