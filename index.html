@@ -140,13 +140,13 @@
 			clearInterval(move);
 			enemyypos = 0 - carheight;
 			enemy.style.top = enemyypos + "px";
-			if (enemyspeed <= 14) {
+			if (enemyspeed <= 11) {
 				enemyspeed = enemyspeed + 0.5;
 			}
-			if (enemyspeed >=3 && enemyspeed <=9){
+			if (enemyspeed >=3 && enemyspeed <=7){
 				bg.src='mediumroad.gif';
 			}
-			if (enemyspeed >=10 && enemyspeed <=13){
+			if (enemyspeed >=8 && enemyspeed <=11){
 				bg.src='fastroad.gif';
 			}
 			makeenemy();
