@@ -129,7 +129,7 @@
 		if (cartop-ymove>=0 && cartop+xmove<=height-carheight-10){
 			cartop = cartop - ymove;
 		}
-		if (carleft-xmove>=left && carleft+xmove<=left+width-carwidth-10){
+		if (carleft-xmove>=left+10 && carleft+xmove<=left+width-carwidth){
 			carleft = carleft + xmove;
 		}
 		car.style.top = cartop + "px";
