@@ -95,6 +95,8 @@
 
 	function makeenemy() {
 		follow=false;
+		gasleft=-999999999;
+		gas.style.left=gasleft+"px";
 		var enemycar = "";
 		var enemynum = Math.floor(Math.random() * (4 - 1 + 1) + 1);
 		if (enemynum == 1) {
