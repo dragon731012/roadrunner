@@ -121,6 +121,7 @@
 		car.style.left = carleft + "px";
     	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
 		car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
+		window.location.reload(1);
        		alert("you died");
     	}
 	}
