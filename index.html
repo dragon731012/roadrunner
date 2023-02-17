@@ -126,15 +126,12 @@
 		}
 		if (enemyypos >= height) {
 			clearInterval(move);
-			function waiting(){
 			enemyypos = 0 - carheight;
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed<=7){
 				enemyspeed = enemyspeed + 0.5;
 			}
 			makeenemy();
-			}
-			setTimeout(waiting,100);
 		}
 	}
 	setInterval(move, 15);
