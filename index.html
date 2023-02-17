@@ -120,6 +120,7 @@
 			a = left+width/4*4+width/4/4-width/4;
 		}
 		enemypos = a;
+		var gasnum=Math.floor(Math.random() * (4 - 1 + 1) + 1);
 		var enemyypos = 0 - carheight;
 		enemy.style.top = enemyypos + "px";
 		enemy.style.left = enemypos + "px";
@@ -127,6 +128,9 @@
 	makeenemy();
 
 	function update() {
+		if (gasnum==7){
+			alert("hi");
+		}
 		if (carleft+xmove<=left+width-carwidth){
 			if (carleft-xmove>=left){
 				carleft = carleft + xmove;
