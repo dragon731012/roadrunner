@@ -143,6 +143,12 @@
 			if (enemyspeed <= 14) {
 				enemyspeed = enemyspeed + 0.5;
 			}
+			if (enemyspeed >=5 && enemyspeed <=9){
+				bg.src='mediumroad.png';
+			}
+			if (enemyspeed >=10 && enemyspeed <=13){
+				bg.src='fastroad.png';
+			}
 			makeenemy();
 		}
 	}
