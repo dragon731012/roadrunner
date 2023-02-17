@@ -62,7 +62,11 @@
 
 	window.addEventListener("keydown", function(event) {
 		if (event.key == "ArrowLeft") {
-			xmove = xspeed * -1;
+			if (carleft+xmove<left+width-carwidth){
+				if (carleft-xmove>left){
+					xmove = xspeed * -1;
+				}
+			}
 		}
 		if (event.key == "ArrowRight") {
 			xmove = xspeed * 1;
