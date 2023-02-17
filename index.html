@@ -21,7 +21,7 @@
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
     <script>
-		var alerting=true;
+	var alerting=true;
 	var screenwidth = window.innerWidth;
 	var screenheight = window.innerHeight;
 	var width = screenwidth;
@@ -36,7 +36,8 @@
 	var enemypos = a;
 	var gassize=width/4-60;
 	var follow=false;
-
+	var ready=false;
+	    
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
 	bg.style.width = width + "px";
@@ -124,8 +125,8 @@
 		enemypos = a;
 		var gasnum=Math.floor(Math.random() * (5 - 1 + 1) + 1);
 		if (gasnum==5){
-			alert("hi");
 			follow=true;
+			ready=true;
 		}
 		var enemyypos = 0 - carheight;
 		enemy.style.top = enemyypos + "px";
@@ -151,20 +152,23 @@
 			}
 		}
 		if (follow==true){
-			var pos2 = Math.floor(Math.random()*(4-1+1)+1);
-			if (pos2 == 1) {
-				b = left+width/4+width/4/4-width/4;
+			if (ready==true){
+				var pos2 = Math.floor(Math.random()*(4-1+1)+1);
+				if (pos2 == 1) {
+					b = left+width/4+width/4/4-width/4;
+				}
+				if (pos2 == 2) {
+					b = left+width/4*2+width/4/4-width/4;
+				}
+				if (pos2 == 3) {
+					b = left+width/4*3+width/4/4-width/4;
+				}
+				if (pos2 == 4) {
+					b = left+width/4*4+width/4/4-width/4;
+				}
+				gasleft = b;
+				ready=false;
 			}
-			if (pos2 == 2) {
-				b = left+width/4*2+width/4/4-width/4;
-			}
-			if (pos2 == 3) {
-				b = left+width/4*3+width/4/4-width/4;
-			}
-			if (pos2 == 4) {
-				b = left+width/4*4+width/4/4-width/4;
-			}
-			gasleft = b;
 			gastop=enemyypos;
 			gas.style.left=gasleft+"px";
 			gas.style.top=gastop+"px";
