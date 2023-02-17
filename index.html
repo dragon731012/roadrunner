@@ -127,14 +127,20 @@
 	makeenemy();
 
 	function update() {
-		if (carleft+xmove<left+width-carwidth){
-			if (carleft-xmove>left){
+		if (carleft+xmove<=left+width-carwidth){
+			if (carleft-xmove>=left){
 				carleft = carleft + xmove;
 			}
+			else{
+				carleft=left;
+			}
 		}
-		if (cartop-ymove>0){
-			if (cartop+ymove<height-carheight){
+		if (cartop-ymove>=0){
+			if (cartop+ymove<=height-carheight){
 				cartop = cartop - ymove;
+			}
+			else{
+				cartop=height-carheight;
 			}
 		}
 			
