@@ -94,6 +94,7 @@
 	});
 
 	function makeenemy() {
+		follow=false;
 		var enemycar = "";
 		var enemynum = Math.floor(Math.random() * (4 - 1 + 1) + 1);
 		if (enemynum == 1) {
@@ -208,7 +209,6 @@
 				bg.src='fastroad.gif';
 			}
 			makeenemy();
-			follow=false;
 		}
 	}
 	setInterval(move, 15);
