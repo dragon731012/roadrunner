@@ -126,10 +126,10 @@
 	makeenemy();
 
 	function update() {
-		if (cartop-ymove>=0 && cartop+xmove<=height-carheight-10){
+		if (cartop-ymove>=0 && cartop+ymove<=height-carheight){
 			cartop = cartop - ymove;
 		}
-		if (carleft-xmove>=left+10 && carleft+xmove<=left+width-carwidth){
+		if (carleft-xmove>=left && carleft+xmove<=left+width-carwidth){
 			carleft = carleft + xmove;
 		}
 		car.style.top = cartop + "px";
