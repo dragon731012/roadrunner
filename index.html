@@ -130,8 +130,15 @@
 	function update() {
 		if (gasnum==7){
 			gasleft=carleft;
-			gastop=cartop-gasheight-gasheight/4;
+			gastop=cartop-gassize-gassize/4;
 		}
+		else{
+			gasleft=-999999999;
+		}
+
+		gas.style.left = gasleft + "px";
+		gas.style.top = gastop + "px";
+		
 		if (carleft+xmove<=left+width-carwidth){
 			if (carleft-xmove>=left){
 				carleft = carleft + xmove;
