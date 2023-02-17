@@ -45,6 +45,7 @@
 
 	var gasleft=0;
 	var gastop=0;
+	var b=0;
 	    
 	var carwidth = width / 4 - 50;
 	car.style.width = carwidth + "px";
@@ -121,9 +122,9 @@
 			a = left+width/4*4+width/4/4-width/4;
 		}
 		enemypos = a;
-		var gasnum=Math.floor(Math.random() * (4 - 1 + 1) + 1);
-		gasnum=7;
-		if (gasnum==7){
+		var gasnum=Math.floor(Math.random() * (5 - 1 + 1) + 1);
+		if (gasnum==5){
+			alert("hi");
 			follow=true;
 		}
 		var enemyypos = 0 - carheight;
@@ -150,10 +151,23 @@
 			}
 		}
 		if (follow==true){
-		    gastop=enemyypos-gassize;
-		    gasleft=enemypos;
-		    gas.style.left=gasleft+"px";
-		    gas.style.top=gastop+"px";
+			var pos2 = Math.floor(Math.random()*(4-1+1)+1);
+			if (pos2 == 1) {
+				b = left+width/4+width/4/4-width/4;
+			}
+			if (pos2 == 2) {
+				b = left+width/4*2+width/4/4-width/4;
+			}
+			if (pos2 == 3) {
+				b = left+width/4*3+width/4/4-width/4;
+			}
+			if (pos2 == 4) {
+				b = left+width/4*4+width/4/4-width/4;
+			}
+			gasleft = b;
+			gastop=enemyypos;
+			gas.style.left=gasleft+"px";
+			gas.style.top=gastop+"px";
 		}
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
