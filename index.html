@@ -107,16 +107,16 @@
 		enemy.src = enemycar;
 		var pos = Math.floor(Math.random()*(4-1+1)+1)
 		if (pos == 1) {
-			a = left+width/4+width/4/4;
+			a = left+width/4+width/4/4-width/4;
 		}
 		if (pos == 2) {
-			a = left+width/4*2+width/4/4;
+			a = left+width/4*2+width/4/4-width/4;
 		}
 		if (pos == 3) {
-			a = left+width/4*3+width/4/4;
+			a = left+width/4*3+width/4/4-width/4;
 		}
 		if (pos == 4) {
-			a = left+width/4*4+width/4/4;
+			a = left+width/4*4+width/4/4-width/4;
 		}
 		enemypos = a;
 		var enemyypos = 0 - carheight;
