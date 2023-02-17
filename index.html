@@ -119,6 +119,10 @@
 		carleft = carleft + xmove;
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
+		function colliding(){
+    		if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
+       			alert("you died");
+    		}
 	}
 	setInterval(update, 15);
 
