@@ -21,7 +21,7 @@
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
     <script>
-var ready2=true;
+	var ready2=true;
 	var gasnum=Math.floor(Math.random() * (5 - 1 + 1) + 1);
 	var alerting=true;
 	var screenwidth = window.innerWidth;
@@ -37,8 +37,6 @@ var ready2=true;
 	var a=0;
 	var enemypos = a;
 	var gassize=width/4-60;
-	var follow=false;
-	var ready=false;
 	var time=0;
 	    
 	bg.style.left = left + "px";
@@ -50,7 +48,6 @@ var ready2=true;
 	var gasleft=0;
 	var gastop=0;
 	var b=0;
-	follow=false;
 	gas.style.left="999999999px";
 	var carwidth = width / 4 - 50;
 	car.style.width = carwidth + "px";
@@ -70,7 +67,6 @@ var ready2=true;
 	window.addEventListener("keydown", function(event) {
 		if (event.key == "ArrowLeft") {
 			xmove = xspeed * -1;
-
 		}
 		if (event.key == "ArrowRight") {
 			xmove = xspeed * 1;
@@ -128,11 +124,7 @@ var ready2=true;
 		}
 		enemypos = a;
 		gasnum=Math.floor(Math.random() * (5 - 1 + 1) + 1);
-		if (gasnum==5){
-			follow=true;
-			ready=true;
-		}
-		var enemyypos = -100 - carheight;
+		var enemyypos = 0 - carheight;
 		enemy.style.top = enemyypos + "px";
 		enemy.style.left = enemypos + "px";
 	}
@@ -183,10 +175,10 @@ var ready2=true;
 	car.style.left = carleft + "px";
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
-    if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
+   	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
 		car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
 		window.location.reload(1);
-       	if (alerting==true){
+		if (alerting==true){
 			alert("you died");
 		}
 		alerting=false;
@@ -200,7 +192,7 @@ var ready2=true;
 		}
 		if (enemyypos >= height) {
 			clearInterval(move);
-			enemyypos = -100 - carheight;
+			enemyypos = 0 - carheight;
 			time=time+1;
 			ready2=true;
 			if (time==4){
