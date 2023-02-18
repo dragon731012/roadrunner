@@ -156,6 +156,7 @@
 		}
 		if (follow==true){
 			if (ready==true){
+				gastop=enemyypos-Math.floor(Math.random()*(100-1+1)+1);
 				var pos2 = Math.floor(Math.random()*(4-1+1)+1);
 				if (pos2 == 1) {
 					b = left+width/4+width/4/4-width/4;
@@ -169,7 +170,6 @@
 				if (pos2 == 4) {
 					b = left+width/4*4+width/4/4-width/4;
 				}
-				gastop=enemyypos-Math.floor(Math.random()*(100-1+1)+1);
 				gasleft = b;
 				ready=false;
 			}
