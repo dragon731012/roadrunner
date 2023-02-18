@@ -173,7 +173,7 @@
 				gasleft = b;
 				ready=false;
 			}
-			gastop=enemyypos;
+			gastop=enemyypos-Math.floor(Math.random()*(100-1+1)+1);
 			gas.style.left=gasleft+"px";
 			gas.style.top=gastop+"px";
 		}
