@@ -21,7 +21,7 @@
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
     <script>
-	var ready2=true;
+var ready2=true;
 	var gasnum=Math.floor(Math.random() * (5 - 1 + 1) + 1);
 	var alerting=true;
 	var screenwidth = window.innerWidth;
@@ -183,14 +183,13 @@
 	car.style.left = carleft + "px";
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
-    	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
+    if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
 		car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
 		window.location.reload(1);
-       		if (alerting==true){
+       	if (alerting==true){
 			alert("you died");
 		}
 		alerting=false;
-    	}
 	}
 	setInterval(update, 15);
 
@@ -205,7 +204,7 @@
 			time=time+1;
 			ready2=true;
 			if (time==4){
-				time==0;
+				time=0;
 			}
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed <= 11) {
@@ -221,7 +220,6 @@
 		}
 	}
 	setInterval(move, 15);
-
     </script>
   </body>
 </html>
