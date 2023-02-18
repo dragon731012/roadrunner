@@ -138,6 +138,7 @@
 	makeenemy();
 
 	function update() {
+		gas.style.top=gastop+"px";
 		if (carleft+xmove<=left+width-carwidth){
 			if (carleft-xmove>=left){
 				carleft = carleft + xmove;
@@ -154,6 +155,8 @@
 				cartop=height-carheight-15;
 			}
 		}
+		follow=true;
+		ready=true;
 		if (follow==true){
 			if (ready==true){
 				var pos2 = Math.floor(Math.random()*(4-1+1)+1);
@@ -180,7 +183,6 @@
 		}
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
-		gas.style.top=gastop+"px";
 		bg.style.left = left + "px";
 		bg.style.height = height + "px";
     	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
