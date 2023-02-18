@@ -95,8 +95,6 @@
 	});
 
 	function makeenemy() {
-		follow=false;
-		gasleft=-999999999;
 		gas.style.left=gasleft+"px";
 		var enemycar = "";
 		var enemynum = Math.floor(Math.random() * (4 - 1 + 1) + 1);
@@ -131,6 +129,10 @@
 		if (gasnum==5){
 			follow=true;
 			ready=true;
+		}
+		else{
+			follow=false;
+			gas.style.left="999999999px";
 		}
 		var enemyypos = -100 - carheight;
 		enemy.style.top = enemyypos + "px";
