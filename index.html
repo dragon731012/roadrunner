@@ -21,6 +21,7 @@
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
     <script>
+	var ready2=true;
 	var gasnum=Math.floor(Math.random() * (5 - 1 + 1) + 1);
 	var alerting=true;
 	var screenwidth = window.innerWidth;
@@ -155,8 +156,8 @@
 				cartop=height-carheight-15;
 			}
 		}
-		if (follow==true){
-			if (ready==true){
+		if (time==4){
+			if (ready2==true){
 				var pos2 = Math.floor(Math.random()*(4-1+1)+1);
 				if (pos2 == 1) {
 					b = left+width/4+width/4/4-width/4;
@@ -172,15 +173,16 @@
 				}
 				gasleft = b;
 				gastop=enemyypos-Math.floor(Math.random()*(100-1+1)+1);
-				ready=false;
+				ready2=false;
 			}
-			gas.style.left=gasleft+"px";
-			gas.style.top=gastop+"px";
 		}
-		car.style.top = cartop + "px";
-		car.style.left = carleft + "px";
-		bg.style.left = left + "px";
-		bg.style.height = height + "px";
+		gas.style.left=gasleft+"px";
+		gas.style.top=gastop+"px";
+	}
+	car.style.top = cartop + "px";
+	car.style.left = carleft + "px";
+	bg.style.left = left + "px";
+	bg.style.height = height + "px";
     	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
 		car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
 		window.location.reload(1);
@@ -201,6 +203,10 @@
 			clearInterval(move);
 			enemyypos = -100 - carheight;
 			time=time+1;
+			ready2=true;
+			if (time==4){
+				time==0;
+			}
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed <= 11) {
 				enemyspeed = enemyspeed + 0.5;
