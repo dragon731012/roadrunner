@@ -37,6 +37,8 @@
 	var gassize=width/4-60;
 	var follow=false;
 	var ready=false;
+	follow=true;
+	ready=true;
 	    
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
@@ -155,8 +157,6 @@
 				cartop=height-carheight-15;
 			}
 		}
-		follow=true;
-		ready=true;
 		if (follow==true){
 			if (ready==true){
 				var pos2 = Math.floor(Math.random()*(4-1+1)+1);
