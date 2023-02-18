@@ -21,7 +21,6 @@
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
     <script>
-	var ready2=true;
 	var gasnum=Math.floor(Math.random() * (5 - 1 + 1) + 1);
 	var alerting=true;
 	var screenwidth = window.innerWidth;
@@ -37,7 +36,8 @@
 	var a=0;
 	var enemypos = a;
 	var gassize=width/4-60;
-	var time=0;
+	var follow=false;
+	var ready=false;
 	    
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
@@ -48,7 +48,7 @@
 	var gasleft=0;
 	var gastop=0;
 	var b=0;
-	gas.style.left="999999999px";
+	    
 	var carwidth = width / 4 - 50;
 	car.style.width = carwidth + "px";
 	var carheight = height / 5;
@@ -67,6 +67,7 @@
 	window.addEventListener("keydown", function(event) {
 		if (event.key == "ArrowLeft") {
 			xmove = xspeed * -1;
+
 		}
 		if (event.key == "ArrowRight") {
 			xmove = xspeed * 1;
@@ -124,7 +125,11 @@
 		}
 		enemypos = a;
 		gasnum=Math.floor(Math.random() * (5 - 1 + 1) + 1);
-		var enemyypos = 0 - carheight;
+		if (gasnum==5){
+			follow=true;
+			ready=true;
+		}
+		var enemyypos = -100 - carheight;
 		enemy.style.top = enemyypos + "px";
 		enemy.style.left = enemypos + "px";
 	}
@@ -148,8 +153,8 @@
 				cartop=height-carheight-15;
 			}
 		}
-		if (time==4){
-			if (ready2==true){
+		if (follow==true){
+			if (ready==true){
 				var pos2 = Math.floor(Math.random()*(4-1+1)+1);
 				if (pos2 == 1) {
 					b = left+width/4+width/4/4-width/4;
@@ -165,23 +170,23 @@
 				}
 				gasleft = b;
 				gastop=enemyypos-Math.floor(Math.random()*(100-1+1)+1);
-				ready2=false;
+				ready=false;
 			}
+			gas.style.left=gasleft+"px";
+			gas.style.top=gastop+"px";
 		}
-		gas.style.left=gasleft+"px";
-		gas.style.top=gastop+"px";
-	}
-	car.style.top = cartop + "px";
-	car.style.left = carleft + "px";
-	bg.style.left = left + "px";
-	bg.style.height = height + "px";
-   	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
+		car.style.top = cartop + "px";
+		car.style.left = carleft + "px";
+		bg.style.left = left + "px";
+		bg.style.height = height + "px";
+    	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
 		car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
 		window.location.reload(1);
-		if (alerting==true){
+       		if (alerting==true){
 			alert("you died");
 		}
 		alerting=false;
+    	}
 	}
 	setInterval(update, 15);
 
@@ -191,13 +196,10 @@
 			enemy.style.top = enemyypos + "px";
 		}
 		if (enemyypos >= height) {
+			follow=false;
+			gas.style.left="999999999px";
 			clearInterval(move);
 			enemyypos = 0 - carheight;
-			time=time+1;
-			ready2=true;
-			if (time==4){
-				time=0;
-			}
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed <= 11) {
 				enemyspeed = enemyspeed + 0.5;
@@ -212,6 +214,7 @@
 		}
 	}
 	setInterval(move, 15);
+
     </script>
   </body>
 </html>
