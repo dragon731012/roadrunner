@@ -95,7 +95,6 @@
 	});
 
 	function makeenemy() {
-		gas.style.left=gasleft+"px";
 		var enemycar = "";
 		var enemynum = Math.floor(Math.random() * (4 - 1 + 1) + 1);
 		if (enemynum == 1) {
@@ -129,10 +128,6 @@
 		if (gasnum==5){
 			follow=true;
 			ready=true;
-		}
-		else{
-			follow=false;
-			gas.style.left="999999999px";
 		}
 		var enemyypos = -100 - carheight;
 		enemy.style.top = enemyypos + "px";
@@ -174,11 +169,8 @@
 					b = left+width/4*4+width/4/4-width/4;
 				}
 				gasleft = b;
-				function waiting2(){
-					gastop=enemyypos-Math.floor(Math.random()*(100-1+1)+1);
-					ready=false;
-				}
-				setTimeout(waiting2,20);
+				gastop=enemyypos-Math.floor(Math.random()*(100-1+1)+1);
+				ready=false;
 			}
 			gas.style.left=gasleft+"px";
 			gas.style.top=gastop+"px";
@@ -204,6 +196,8 @@
 			enemy.style.top = enemyypos + "px";
 		}
 		if (enemyypos >= height) {
+			follow=false;
+			gas.style.left="999999999px";
 			clearInterval(move);
 			enemyypos = 0 - carheight;
 			enemy.style.top = enemyypos + "px";
