@@ -37,8 +37,6 @@
 	var gassize=width/4-60;
 	var follow=false;
 	var ready=false;
-	follow=true;
-	ready=true;
 	    
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
@@ -175,7 +173,6 @@
 				gasleft = b;
 				gastop=enemyypos-Math.floor(Math.random()*(100-1+1)+1);
 				gas.style.top=gastop+"px";
-				ready=false;
 			}
 			gas.style.left=gasleft+"px";
 			gas.style.top=gastop+"px";
