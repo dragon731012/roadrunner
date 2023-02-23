@@ -175,6 +175,9 @@
 			clearInterval(move);
 			gascount=gascount+1;
 			loop=false;
+			if (gascount>=2){
+				loop=true;
+			}
 			enemyypos = 0 - carheight;
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed <= 11) {
