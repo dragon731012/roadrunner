@@ -128,6 +128,9 @@
 	makeenemy();
 
 	function update() {
+		if (carleft < gasleft + gassize && carleft + carwidth > gasleft && cartop < gastop + gassize && cartop + carheight > gastop) {
+			alert("hi");
+		}
 		if (carleft+xmove<=left+width-carwidth){
 			if (carleft-xmove>=left){
 				carleft = carleft + xmove;
@@ -161,17 +164,14 @@
 		car.style.left = carleft + "px";
 		bg.style.left = left + "px";
 		bg.style.height = height + "px";
-    	if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
-		car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
-		window.location.reload(1);
-       		if (alerting==true){
-			alert("you lost.");
+		if (carleft < enemypos + carwidth && carleft + carwidth > enemypos && cartop < enemyypos + carheight && cartop + carheight > enemyypos) {
+			car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
+			window.location.reload(1);
+			if (alerting==true){
+				alert("you lost.");
+			}
+			alerting=false;
 		}
-		alerting=false;
-    	}
-	if (carleft < gasleft + gassize && carleft + carwidth > gasleft && cartop < gastop + gassize && cartop + carheight > gastop) {
-		alert("hi");
-	}
 	}
 	setInterval(update, 15);
 
