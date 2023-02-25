@@ -165,7 +165,7 @@
 		car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
 		window.location.reload(1);
        		if (alerting==true){
-			alert("you died");
+			alert("you lost.");
 		}
 		alerting=false;
     	}
@@ -179,7 +179,10 @@
 		}
 		if (enemyypos >= height) {
 			clearInterval(move);
-			starting=true;
+			var randomnum=Math.floor(Math.random() * (4 - 1 + 1) + 1);
+			if (randomnum==4){
+				starting=true;
+			}
 			enemyypos = 0 - carheight;
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed <= 11) {
