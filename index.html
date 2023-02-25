@@ -149,9 +149,10 @@
 				var gasposition=Math.floor(Math.random() * (width - 1 + 1) + 1);
 				starting=false;
 			}
-			gasleft=gasposition;
+			gasleft=gasposition+left;
 			gastop=enemyypos;
-			gas.style.left=gasleft+"px";	
+			gas.style.left=gasleft+"px";
+			gas.style.top=gastop+"px";
 		}
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
