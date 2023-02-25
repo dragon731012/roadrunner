@@ -129,7 +129,8 @@
 	makeenemy();
 
 	function update() {
-		if (carleft < gasleft+left + gassize && carleft + carwidth > gasleft+left && cartop < gastop + gassize && cartop + carheight > gastop) {
+		var gasactualleft=gasleft+left;
+		if (carleft < gasactualleft + gassize && carleft + carwidth > gasactualleft && cartop < gastop + gassize && cartop + carheight > gastop) {
 			alert("hi");
 		}
 		if (carleft+xmove<=left+width-carwidth){
