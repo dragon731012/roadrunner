@@ -35,6 +35,8 @@
 	var a=0;
 	var enemypos = a;
 	var gassize=width/4-60;
+	var starting=true;
+	var follow=true;
 
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
@@ -119,7 +121,6 @@
 			a = left+width/4*4+width/4/4-width/4;
 		}
 		enemypos = a;
-		var gasnum=Math.floor(Math.random() * (4 - 1 + 1) + 1);
 		var enemyypos = 0 - carheight;
 		enemy.style.top = enemyypos + "px";
 		enemy.style.left = enemypos + "px";
@@ -143,6 +144,15 @@
 				cartop=height-carheight-15;
 			}
 		}
+		if (follow==true){
+			if (starting==true){
+				var gasposition=Math.floor(Math.random() * (width - 1 + 1) + 1);
+				starting=false;
+			}
+			gasleft=gasposition;
+			gastop=enemyypos;
+			gas.style.left=gasleft+"px";	
+		}
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
 		bg.style.left = left + "px";
@@ -165,7 +175,6 @@
 		}
 		if (enemyypos >= height) {
 			clearInterval(move);
-			loop=false;
 			enemyypos = 0 - carheight;
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed <= 11) {
