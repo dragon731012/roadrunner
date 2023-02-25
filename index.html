@@ -147,11 +147,12 @@
 		if (follow==true){
 			if (starting==true){
 				var gasposition=Math.floor(Math.random() * (width - 1 + 1) + 1);
-				var gasyposition=Math.floor(Math.random() * (350 - 1 + 1) + 1);
+				var gasyposition=Math.floor(Math.random() * (100 - 1 + 1) + 1);
 				starting=false;
 			}
 			gasleft=gasposition+left;
-			gastop=enemyypos-50-gasyposition;
+			gastop=enemyypos-50;
+			gastop=gastop-gasyposition;
 			gas.style.left=gasleft+"px";
 			gas.style.top=gastop+"px";
 		}
