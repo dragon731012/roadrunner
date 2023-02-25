@@ -35,8 +35,6 @@
 	var a=0;
 	var enemypos = a;
 	var gassize=width/4-60;
-	var follow=false;
-	var gascount=0;
 
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
@@ -46,7 +44,6 @@
 
 	var gasleft=0;
 	var gastop=0;
-	var loop=true;
 	var carwidth = width / 4 - 50;
 	car.style.width = carwidth + "px";
 	var carheight = height / 5;
@@ -146,11 +143,6 @@
 				cartop=height-carheight-15;
 			}
 		}
-		if (loop==true){
-		    gastop=enemyypos-gassize;
-		    gasleft=enemypos;
-		    gascount=0;
-		}
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
 		bg.style.left = left + "px";
@@ -173,11 +165,7 @@
 		}
 		if (enemyypos >= height) {
 			clearInterval(move);
-			gascount=gascount+1;
 			loop=false;
-			if (gascount>=2){
-				loop=true;
-			}
 			enemyypos = 0 - carheight;
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed <= 11) {
