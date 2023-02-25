@@ -33,9 +33,10 @@
 	var downspeed = 6;
 	var enemyspeed = 3;
 	var a=0;
+	var gmoving=false;
 	var enemypos = a;
 	var gassize=width/4-60;
-	var starting=true;
+	var starting=false;
 	var follow=true;
 
 	bg.style.left = left + "px";
@@ -149,6 +150,7 @@
 		}
 		if (follow==true){
 			if (starting==true){
+				gmoving=true;
 				var gasposition=Math.floor(Math.random() * (width-50 - 1 + 1) + 1);
 				var gasyposition=Math.floor(Math.random() * (100 - 1 + 1) + 1);
 				gastop=enemyypos-50;
@@ -183,7 +185,7 @@
 		if (enemyypos >= height) {
 			clearInterval(move);
 			var randomnum=Math.floor(Math.random() * (7 - 1 + 1) + 1);
-			if (randomnum==4){
+			if (randomnum==4 && gmoving==false){
 				starting=true;
 			}
 			enemyypos = 0 - carheight;
@@ -198,6 +200,9 @@
 				bg.src='fastroad.gif';
 			}
 			makeenemy();
+		}
+		if (gastop >= height) {
+			gmoving=false;
 		}
 	}
 	setInterval(move, 15);
