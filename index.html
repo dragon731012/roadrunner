@@ -42,17 +42,21 @@
 	var gassize=width/4-60;
 	var starting=false;
 	var follow=true;
-	var gallonsleft=left+width+width/3;
+	var gallonleft=left+width+width/3;
+	var gallontop=height/2;
 	    
 	gallon.textContent = "?";
 
-	gallon.style.left=gallonsleft+"px";
+	gallon.style.left=gallonleft+"px";
+	gallon.style.top=gallontop+"px";
+	gallon.style.fontSize = "x-large";
 
 	bg.style.left = left + "px";
 	bg.style.height = height + "px";
 	bg.style.width = width + "px";
 	    
 	gas.style.width=gassize+"px";
+	    
 
 	var gasleft=100000;
 	var gastop=0;
