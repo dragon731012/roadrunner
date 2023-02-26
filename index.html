@@ -169,13 +169,13 @@
 			car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
 			window.location.reload(1);
 			if (alerting==true){
-				gasleft=9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+				alert("you lose.");
 			}
 			alerting=false;
 		}
 		caractualleft=carleft-left;
 		if (caractualleft < gasposition + gassize && caractualleft + carwidth > gasposition && cartop < gastop + gassize && cartop + gassize > gastop) {
-			alert("hi");
+			gasleft=9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
 		}
 	}
 	setInterval(update, 15);
