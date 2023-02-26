@@ -61,6 +61,7 @@
 
 	var ymove = 0;
 	var xmove = 0;
+	var caractualleft=carleft-left;
 
 	window.addEventListener("keydown", function(event) {
 		if (event.key == "ArrowLeft") {
@@ -129,7 +130,7 @@
 	makeenemy();
 
 	function update() {
-		var caractualleft=carleft-left;
+		caractualleft=carleft-left;
 		if (caractualleft < gasleft + gassize && caractualleft + carwidth > gasleft && cartop < gastop + gassize && cartop + carheight > gastop) {
 			alert("hi");
 		}
