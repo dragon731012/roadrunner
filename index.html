@@ -175,7 +175,8 @@
 		}
 		alert(carleft);
 		alert(gasposition);
-		if (carleft < gasposition + gassize && carleft + carwidth > gasposition && cartop < gastop + gassize && cartop + gasheight > rect2.y) {
+		caractualleft=carleft-left;
+		if (caractualleft < gasposition + gassize && caractualleft + carwidth > gasposition && cartop < gastop + gassize && cartop + gasheight > rect2.y) {
 			alert("hi");
 		}
 	}
