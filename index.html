@@ -58,7 +58,8 @@
 	enemy.style.height = carheight + "px";
 	enemy.style.width = carwidth + "px";
 	var enemyypos=0-carwidth;
-
+	var gasposition=Math.floor(Math.random() * (width-50 - 1 + 1) + 1);
+	var gasyposition=Math.floor(Math.random() * (100 - 1 + 1) + 1);
 	var ymove = 0;
 	var xmove = 0;
 	var caractualleft=carleft-left;
@@ -149,8 +150,8 @@
 		if (follow==true){
 			if (starting==true){
 				gmoving=true;
-				var gasposition=Math.floor(Math.random() * (width-50 - 1 + 1) + 1);
-				var gasyposition=Math.floor(Math.random() * (100 - 1 + 1) + 1);
+				gasposition=Math.floor(Math.random() * (width-50 - 1 + 1) + 1);
+				gasyposition=Math.floor(Math.random() * (100 - 1 + 1) + 1);
 				gastop=enemyypos-50;
 				gastop=gastop-gasyposition;
 				starting=false;
