@@ -7,12 +7,12 @@
 	 src="slowroad.gif"	
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
-    <font size="10000000">
-	    <p id="gallon"
-		   style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
-		>?
-	    </p>
-    </font>
+
+    <p id="gallon"
+	   style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
+	>?
+    </p>
+	  
     <img id="gas"
 	 src="gas-removebg-preview.png"	
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
@@ -47,9 +47,7 @@
 	var gallonleft=left+width+width/3;
 	var gallontop=height/2-height/5;
 	var gallon = document.getElementById("gallon");
-	gallon.style.fontSize = "25px";
-	gallon.innerHTML = "String";
-
+	document.getElementById("gallon").style.fontSize = "10000px";
 	gallon.textContent = "?";
 
 	gallon.style.left=gallonleft+"px";
