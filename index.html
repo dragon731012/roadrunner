@@ -48,7 +48,8 @@
 	var gallontop=height/2-height/3;
 	var gallon = document.getElementById("gallon");
 	document.getElementById("gallon").style.fontSize = "100px";
-	gallon.textContent = "?";
+	gallon.textContent = "gas: ?";
+	var gallons=100;
 
 	gallon.style.left=gallonleft+"px";
 	gallon.style.top=gallontop+"px";
@@ -225,6 +226,10 @@
 		}
 	}
 	setInterval(move, 15);
+	function gallonupdate(){
+		gallons=gallons-1;
+		gallon.textContent = "gas: "+gallons;
+	}
     </script>
   </body>
 </html>
