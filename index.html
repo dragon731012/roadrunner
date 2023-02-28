@@ -205,14 +205,14 @@
 		}
 		if (enemyypos >= height) {
 			clearInterval(move);
-			var randomnum=Math.floor(Math.random() * (4 - 1 + 1) + 1);
-			if (randomnum==4 && gmoving==false){
+			var randomnum=Math.floor(Math.random() * (3 - 1 + 1) + 1);
+			if (randomnum==3 && gmoving==false){
 				starting=true;
 			}
 			enemyypos = 0 - carheight;
 			enemy.style.top = enemyypos + "px";
 			if (enemyspeed <= 8) {
-				enemyspeed = enemyspeed + 0.5;
+				enemyspeed = enemyspeed + 1.5;
 			}
 			if (enemyspeed >=3 && enemyspeed <=5){
 				bg.src='mediumroad.gif';
