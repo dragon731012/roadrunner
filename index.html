@@ -205,16 +205,16 @@
 				coinposition=Math.floor(Math.random() * (width-50 - 1 + 1) + 1);
 				coinyposition=Math.floor(Math.random() * (100 - 1 + 1) + 1);
 				cointop=enemyypos-50;
-				cointop=gastop-gasyposition;
+				cointop=cointop-gasyposition;
 				starting2=false;
 			}
-			coinleft=gasposition+left;
+			coinleft=coinposition+left;
 			coin.style.left=coinleft+"px";
 		}
 		gastop=gastop+enemyspeed+2.5;
 		gas.style.top=gastop+"px";
-		cointop=gastop+enemyspeed+2.5;
-		coin.style.top=gastop+"px";
+		cointop=cointop+enemyspeed+2.5;
+		coin.style.top=cointop+"px";
 		car.style.top = cartop + "px";
 		car.style.left = carleft + "px";
 		bg.style.left = left + "px";
