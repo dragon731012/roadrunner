@@ -192,6 +192,7 @@
 		caractualleft=carleft-left;
 		if (caractualleft < gasposition + gassize && caractualleft + carwidth > gasposition && cartop < gastop + gassize && cartop + gassize > gastop) {
 			gastop=9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+			gallons=gallons+15;
 			gas.style.top=gastop+"px";
 		}
 	}
@@ -227,6 +228,14 @@
 	}
 	setInterval(move, 15);
 	function gallonupdate(){
+		if (gallons-1<=0){
+			car.src='Screenshot_2023-02-16_205847-removebg-preview.png';
+			window.location.reload(1);
+			if (alerting==true){
+				alert("you lose.");
+			}
+			alerting=false;
+		}
 		gallons=gallons-1;
 		gallon.textContent = "gas: "+gallons;
 	}
