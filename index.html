@@ -38,7 +38,8 @@
          style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
     >
     <script>
-	var highscore=window.localStorage.getItem("highscore"); 
+	function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+	var highscore=get_cookie("highscore");
 	var alerting=true;
 	var screenwidth = window.innerWidth;
 	var screenheight = window.innerHeight;
@@ -180,7 +181,7 @@
 
 	function update() {
 		if (score>highscore){
-			window.localStorage.setItem("highscore",score);
+			document.cookie="highscore="+score+"; expires=Thu, 18 Dec 9013 12:00:00 UTC";
 		}
         coincounter.textContent="score: "+coins;
 		if (carleft+xmove<=left+width-carwidth){
