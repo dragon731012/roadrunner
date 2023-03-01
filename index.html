@@ -236,6 +236,11 @@
 			gallons=gallons+25;
 			gas.style.top=gastop+"px";
 		}
+		if (caractualleft < coinposition + coinsize && caractualleft + carwidth > coinposition && cartop < gastop + coinsize && cartop + coinsize > cointop) {
+			cointop=9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+			coins=coins+1;
+			coin.style.top=cointop+"px";
+		}
 	}
 	setInterval(update, 15);
 
