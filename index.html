@@ -13,7 +13,11 @@
 	>?
     </p>
     <p id="coincounter"
-	   style="position:fixed; left:0px; top:0px;width:50px; height:50px; border:none;"
+	   style="position:fixed; left:10px; top:0px;width:50px; height:50px; border:none;"
+	>?
+    </p>  
+        <p id="highscorecounter"
+	   style="position:fixed; left:10px; top:10px;width:50px; height:50px; border:none;"
 	>?
     </p>  
     <img id="gas"
@@ -35,6 +39,9 @@
     >
     <script>
 	var highscore=window.localStorage.getItem("highscore"); 
+	if (highscore==undefined){
+		highscore=0;
+	}
 	var alerting=true;
 	var screenwidth = window.innerWidth;
 	var screenheight = window.innerHeight;
@@ -62,7 +69,9 @@
 	var gallon = document.getElementById("gallon");
 	document.getElementById("gallon").style.fontSize = "50px";
 	document.getElementById("coincounter").style.fontSize = "25px";
+	document.getElementById("highscorecounter").style.fontSize = "25px";
 	gallon.textContent = "gas: ?";
+	highscorecounter.textContent = "high score: "+highscore;
 	coincounter.textContent = "score: ?";
 	var gallons=100;
 	var coins=0;
@@ -173,6 +182,9 @@
 	makeenemy();
 
 	function update() {
+		if (score>highscore){
+			window.localStorage.setItem("highscore",score);
+		}
         coincounter.textContent="score: "+coins;
 		if (carleft+xmove<=left+width-carwidth){
 			if (carleft-xmove>=left){
