@@ -65,7 +65,7 @@
 	coincounter.textContent = "score: ?";
 	var gallons=100;
 	var coins=0;
-        coincounter.textContent="score: "+coins:
+        coincounter.textContent="score: "+coins;
 	var coinsize=width/4-60;
 
 	coincounter.style.right=coincountright+"px";
@@ -172,7 +172,7 @@
 	makeenemy();
 
 	function update() {
-                        coincounter.textContent="score: "+coins:
+        coincounter.textContent="score: "+coins;
 		if (carleft+xmove<=left+width-carwidth){
 			if (carleft-xmove>=left){
 				carleft = carleft + xmove;
@@ -236,7 +236,7 @@
 			gallons=gallons+25;
 			gas.style.top=gastop+"px";
 		}
-		if (caractualleft < coinposition + coinsize && caractualleft + carwidth > coinposition && cartop < gastop + coinsize && cartop + coinsize > cointop) {
+		if (caractualleft < coinposition + coinsize && caractualleft + carwidth > coinposition && cartop < cointop + coinsize && cartop + coinsize > cointop) {
 			cointop=9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
 			coins=coins+1;
 			coin.style.top=cointop+"px";
