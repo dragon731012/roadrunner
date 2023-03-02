@@ -183,6 +183,7 @@
 	makeenemy();
 
 	function update() {
+		window.localStorage.setItem("highscore",highscore);
 		if (coins>highscore){
 			window.localStorage.setItem("highscore",highscore);
 			highscore=coins;
