@@ -185,6 +185,7 @@
 	function update() {
 		if (coins>highscore){
 			window.localStorage.setItem("highscore",highscore);
+			highscore=coins;
 			highscorecounter.textContent = "high score: "+highscore;
 		}
         coincounter.textContent="score: "+coins;
