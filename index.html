@@ -185,6 +185,7 @@
 	function update() {
 		if (coins>highscore){
 			document.cookie="highscore="+coins+"; expires=Thu, 18 Dec 9013 12:00:00 UTC";
+			highscorecounter.textContent = "high score: "+highscore;
 		}
         coincounter.textContent="score: "+coins;
 		if (carleft+xmove<=left+width-carwidth){
