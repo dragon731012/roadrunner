@@ -209,7 +209,7 @@
 		if (follow==true){
 			if (starting==true){
 				gmoving=true;
-				gasposition=Math.floor(Math.random() * (width-50 - 1 + 1) + 1);
+				gasposition=Math.floor(Math.random() * (width-gassize - 1 + 1) + 1);
 				gasyposition=Math.floor(Math.random() * (100 - 1 + 1) + 1);
 				gastop=enemyypos-50;
 				gastop=gastop-gasyposition;
@@ -221,7 +221,7 @@
 		if (follow2==true){
 			if (starting2==true){
 				cmoving=true;
-				coinposition=Math.floor(Math.random() * (width-50 - 1 + 1) + 1);
+				coinposition=Math.floor(Math.random() * (width-coinsize - 1 + 1) + 1);
 				coinyposition=Math.floor(Math.random() * (100 - 1 + 1) + 1);
 				cointop=enemyypos-50;
 				cointop=cointop-coinyposition;
