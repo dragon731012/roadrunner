@@ -43,9 +43,14 @@
 		highscore=0;
 		window.localStorage.setItem("highscore",highscore);
 	}
+	alert("by dragonmaster73101");
+	alert("rules: use arrow keys to dodge cars and collect gas and coins. use on a chromebook looks better that way");
 	var alerting=true;
 	var screenwidth = window.innerWidth;
 	var screenheight = window.innerHeight;
+	if (screenwidth<screenheight){
+		alert("please use on a bigger device.");
+	}
 	var width = screenwidth;
 	var height = screenheight;
 	width = width / 3;
